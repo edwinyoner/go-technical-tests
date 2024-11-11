@@ -8,9 +8,9 @@ Versión: 1.0
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
+	"bufio" // Paquete para leer entradas del usuario
+	"fmt"   // Paquete para imprimir mensajes en la consola
+	"os"    // Paquete para trabajar con el sistema operativo, en este caso para la entrada de datos
 )
 
 // Función principal del programa. Pide al usuario ingresar una cadena,
