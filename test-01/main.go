@@ -3,6 +3,11 @@ Archivo: main.go
 Autor: Edwin Yoner
 Fecha: 10-11-2024
 Versión: 1.0
+
+Descripción:
+Este programa solicita al usuario que ingrese una cadena de texto y luego invierte el contenido de la cadena
+utilizando dos métodos: uno con un bucle que crea una nueva cadena invertida y otro mediante un intercambio 
+de posiciones dentro del mismo slice de runas (in-place). Ambos métodos soportan texto en formato UTF-8.
 */
 
 package main
@@ -13,7 +18,7 @@ import (
 	"os"    // Paquete para trabajar con el sistema operativo, en este caso para la entrada de datos
 )
 
-// Función principal del programa. Pide al usuario ingresar una cadena,
+// Función principal del programa. Solicita al usuario ingresar una cadena,
 // luego invoca las funciones reverseString y reverseStringPro para invertir la cadena
 // y muestra los resultados en pantalla.
 func main() {
@@ -49,9 +54,9 @@ func main() {
 // Retorna:
 //   - La cadena invertida.
 func reverseString(cadena string) string {
-	r := []rune(cadena)               // Convierte la cadena a una lista de runas para soportar UTF-8.
-	longitud := len(r) - 1            // Calcula la longitud para el índice inverso.
-	resultado := make([]rune, len(r)) // Inicializa un slice de runas para almacenar el resultado.
+	r := []rune(cadena)               // Convierte la cadena a una lista de runas para soportar UTF-8
+	longitud := len(r) - 1            // Calcula la longitud para el índice inverso
+	resultado := make([]rune, len(r)) // Inicializa un slice de runas para almacenar el resultado
 
 	// Bucle para construir la cadena invertida.
 	for i := 0; i < len(r); i++ {
@@ -70,9 +75,9 @@ func reverseString(cadena string) string {
 // Retorna:
 //   - La cadena invertida.
 func reverseStringPro(cadena string) string {
-	r := []rune(cadena) // Convierte la cadena a una lista de runas para soporte UTF-8.
+	r := []rune(cadena) // Convierte la cadena a una lista de runas para soporte UTF-8
 
-	// Bucle que intercambia los caracteres de los extremos hacia el centro.
+	// Bucle que intercambia los caracteres de los extremos hacia el centro
 	for i, j := 0, len(r)-1; i < j; i, j = i+1, j-1 {
 		r[i], r[j] = r[j], r[i]
 	}
